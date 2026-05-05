@@ -182,7 +182,7 @@ const AddCard = () => {
       
       setNotification({
         type: 'success',
-        message: 'Cartão cadastrado com suceçu!'
+        message: 'Cartão cadastrado com sucessuu!'
       });
       
       setCardData({
