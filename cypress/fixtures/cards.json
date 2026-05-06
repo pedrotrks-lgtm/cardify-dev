@@ -1,0 +1,33 @@
+{
+  "validCard": {
+    "number": "5116 6096 7668 2899",
+    "holderName": "Pedro Teste",
+    "expirationDate": "12/30",
+    "cvv": "123",
+    "bankLabel": "Nubank"
+  },
+
+  "invalidName": {
+    "number": "5116 6096 7668 2899",
+    "holderName": "P",
+    "expirationDate": "12/30",
+    "cvv": "123",
+    "bankLabel": "Nubank"
+  },
+
+  "invalidExpirationDate": {
+    "number": "5116 6096 7668 2899",
+    "holderName": "Pedro Teste",
+    "expirationDate": "13/30",
+    "cvv": "123",
+    "bankLabel": "Nubank"
+  },
+
+  "invalidCVV": {
+    "number": "5116 6096 7668 2899",
+    "holderName": "Pedro Teste",
+    "expirationDate": "12/30",
+    "cvv": "12",
+    "bankLabel": "Nubank"
+  }
+}
