@@ -102,4 +102,61 @@ describe('<AddCard />', () => {
     })
   })
 
+  it('Valida cartão duplicado', () => {
+
+    cy.fixture('cards').then((data) => {
+
+      cy.intercept('GET', 'http://wallet.cardfify.dev/api/cards', {
+        statusCode: 200,
+        body: [
+          {
+            id: 1,
+            number: '4111111111111111'
+          }
+        ]
+      }).as('getCards')
+
+      cy.fillCardForm(data.duplicateCard)
+
+      cy.contains('button', 'Adicionar Cartão').click()
+
+      cy.wait('@getCards')
+
+      cy.contains('Este cartão já foi cadastrado anteriormente.')
+        .should('be.visible')
+
+    })
+
+  })
+
+  it('Valida limite máximo de cartões', () => {
+
+    cy.fixture('cards').then((data) => {
+
+      cy.intercept('GET', 'http://wallet.cardfify.dev/api/cards', {
+        statusCode: 200,
+        body: data.limitCards
+      }).as('getCards')
+
+      cy.fillCardForm(data.validCard)
+
+      cy.intercept('POST', 'http://wallet.cardfify.dev/api/cards').as('addCard')
+
+      cy.contains('button', 'Adicionar Cartão').click()
+
+      cy.wait('@getCards')
+
+      cy.contains('Você já cadastrou 3 cartões. Para gerenciar mais cartões, considere migrar para o plano Pro.')
+        .should('be.visible')
+
+      cy.contains('Clique aqui para fazer o Upgrade')
+        .should('be.visible')
+
+      cy.get('@addCard.all').should('have.length', 0)
+
+    })
+
+  })
+
+
 })
