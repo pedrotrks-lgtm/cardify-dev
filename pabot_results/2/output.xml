@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-14T22:05:41.507093" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests">
+<suite id="s1-s1" name="Smoke" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\smoke">
+<suite id="s1-s1-s1" name="Home Smoke" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\smoke\home_smoke.robot">
+<test id="s1-s1-s1-t1" name="Validar Home Cardfy" line="5">
+<kw name="Abrir Cardfy" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-14T22:05:42.472728" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000020FFC202BA0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.469214" elapsed="0.003587"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--headless')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.473033" elapsed="0.000524"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--window-size=1920,1080')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.473728" elapsed="0.000433"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:42.479358" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.474324" elapsed="1.877992"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:44.352780" level="INFO">Opening url 'http://localhost:5173/add'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-14T22:05:44.352542" elapsed="10.797286"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.150159" elapsed="0.255785"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:42.468300" elapsed="12.937815"/>
+</kw>
+<kw name="Validar Tela Inicial" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>tag:h1</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.406860" elapsed="0.150904"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:55.694005" level="INFO">Element 'tag:h1' contains text 'Adicionar Novo Cartão'.</msg>
+<arg>tag:h1</arg>
+<arg>Adicionar Novo Cartão</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.558021" elapsed="0.136100"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:55.406435" elapsed="0.287817"/>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:55.822009" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../results/screenshots/selenium-screenshot-4.png"&gt;&lt;img src="../../results/screenshots/selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.694795" elapsed="0.127353"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:55.694463" elapsed="0.127810"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.822800" elapsed="4.011856"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:55.822479" elapsed="4.012639"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2026-05-14T22:05:42.467407" elapsed="17.368134"/>
+</test>
+<status status="PASS" start="2026-05-14T22:05:41.586599" elapsed="18.250188"/>
+</suite>
+<status status="PASS" start="2026-05-14T22:05:41.582797" elapsed="18.255608"/>
+</suite>
+<status status="PASS" start="2026-05-14T22:05:41.510329" elapsed="18.329105"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Smoke" id="s1-s1" pass="1" fail="0" skip="0">Tests.Smoke</stat>
+<stat name="Home Smoke" id="s1-s1-s1" pass="1" fail="0" skip="0">Tests.Smoke.Home Smoke</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

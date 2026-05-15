@@ -1,0 +1,77 @@
+{
+  "cards": [
+    {
+      "number": "4111111111111111",
+      "holder": "Pedro Teste",
+      "expiration": "12/30",
+      "cvv": "123",
+      "bank": "Nubank",
+      "id": "WH3C7jek5No"
+    },
+    {
+      "number": "4111111111111111",
+      "holder": "Pedro Teste",
+      "expiration": "12/30",
+      "cvv": "123",
+      "bank": "Nubank",
+      "id": "7dbNwCxi_u4"
+    },
+    {
+      "number": "4111111111111111",
+      "holder": "Pedro Teste",
+      "expiration": "12/30",
+      "cvv": "123",
+      "bank": "Nubank",
+      "id": "1h_x_H0kIrs"
+    },
+    {
+      "number": "4111111111111111",
+      "holder": "Pedro Teste",
+      "expiration": "12/30",
+      "cvv": "123",
+      "bank": "Nubank",
+      "id": "GMlL1ssSIo4"
+    },
+    {
+      "number": "4111111111111111",
+      "holder": "Pedro Teste",
+      "expiration": "12/30",
+      "cvv": "123",
+      "bank": "Nubank",
+      "id": "PdxbbzY5Cug"
+    },
+    {
+      "number": "4111111111111111",
+      "holder": "Pedro Teste",
+      "expiration": "12/30",
+      "cvv": "123",
+      "bank": "Nubank",
+      "id": "JQ0P2LIunjo"
+    },
+    {
+      "number": "4111111111111111",
+      "holder": "Pedro Teste",
+      "expiration": "12/30",
+      "cvv": "123",
+      "bank": "Nubank",
+      "id": "uYjqWn3PLTI"
+    },
+    {
+      "number": "2374267215078209",
+      "holder": "Augusto da Mata",
+      "expiration": "12/26",
+      "cvv": "583",
+      "bank": "Nubank",
+      "id": "3HrKbJnxmiM"
+    },
+    {
+      "number": "2388841090620360",
+      "holder": "Maria Cecília Correia",
+      "expiration": "05/30",
+      "cvv": "193",
+      "bank": "Nubank",
+      "id": "sYq-SaVkwpM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

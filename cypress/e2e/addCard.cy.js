@@ -1,12 +1,23 @@
-import React from 'react'
-import AddCard from '../../src/pages/AddCard'
 import addCardPage from '../pages/addCardPage'
 
-describe('<AddCard />', () => {
+describe('Add Card E2E', () => {
 
   beforeEach(() => {
-    cy.viewport(1440, 900)
-    cy.mount(<AddCard />)
+
+    cy.intercept('GET', 'http://wallet.cardfify.dev/api/cards', {
+      statusCode: 200,
+      body: []
+    }).as('getCards')
+
+    cy.intercept('POST', 'http://wallet.cardfify.dev/api/cards', {
+      statusCode: 201,
+      body: {
+        id: 1
+      }
+    }).as('addCard')
+
+    cy.visit('/')
+
   })
 
   it('Valida mensagem de campos obrigatórios', () => {

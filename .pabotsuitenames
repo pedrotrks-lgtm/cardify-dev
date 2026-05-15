@@ -1,0 +1,7 @@
+datasources:c0c3514bd05dad19076439bf7bcc8de11f743406
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:9f9eaa52a9e71e6be585053150bd59f1abac03b0
+--suite Tests.Critical.Add Card
+--suite Tests.Negative.Add Card Validation
+--suite Tests.Smoke.Home Smoke

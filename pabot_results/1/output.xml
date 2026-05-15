@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-14T22:05:41.527983" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests">
+<suite id="s1-s1" name="Negative" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\negative">
+<suite id="s1-s1-s1" name="Add Card Validation" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\negative\add_card_validation.robot">
+<test id="s1-s1-s1-t1" name="Validar Campos Obrigatórios" line="5">
+<kw name="Abrir Cardfy" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-14T22:05:42.477864" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000203A162EF90&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.473658" elapsed="0.004280"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--headless')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.478179" elapsed="0.000580"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--window-size=1920,1080')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.478980" elapsed="0.000520"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:42.496712" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.479688" elapsed="0.996842"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:43.476976" level="INFO">Opening url 'http://localhost:5173/add'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-14T22:05:43.476755" elapsed="11.243367"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-14T22:05:54.720597" elapsed="0.315297"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:42.472691" elapsed="12.563407"/>
+</kw>
+<kw name="Salvar Cartão" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_SALVAR}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.036955" elapsed="0.370386"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:55.407938" level="INFO">Clicking button 'xpath=//button[@type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.407590" elapsed="0.594835"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:55.036478" elapsed="0.966106"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${mensagem}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.003203" elapsed="0.048184"/>
+</kw>
+<arg>Número do cartão é obrigatório</arg>
+<status status="PASS" start="2026-05-14T22:05:56.002834" elapsed="0.048715"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${mensagem}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.052180" elapsed="0.018412"/>
+</kw>
+<arg>Nome do titular é obrigatório</arg>
+<status status="PASS" start="2026-05-14T22:05:56.051797" elapsed="0.018942"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${mensagem}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.071322" elapsed="0.017039"/>
+</kw>
+<arg>Data de expiração é obrigatória</arg>
+<status status="PASS" start="2026-05-14T22:05:56.070959" elapsed="0.017648"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${mensagem}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.089488" elapsed="0.030640"/>
+</kw>
+<arg>CVV é obrigatório</arg>
+<status status="PASS" start="2026-05-14T22:05:56.089000" elapsed="0.031296"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${mensagem}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.120998" elapsed="0.028907"/>
+</kw>
+<arg>Selecione um banco</arg>
+<status status="PASS" start="2026-05-14T22:05:56.120575" elapsed="0.029487"/>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:56.296255" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../results/screenshots/selenium-screenshot-5.png"&gt;&lt;img src="../../results/screenshots/selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.150701" elapsed="0.145689"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:56.150320" elapsed="0.146193"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.297018" elapsed="3.538222"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:56.296715" elapsed="3.538795"/>
+</kw>
+<kw name="Validar Campos Obrigatórios">
+<msg time="2026-05-14T22:05:59.840588" level="FAIL">No keyword with name 'Validar Campos Obrigatórios' found.</msg>
+<status status="FAIL" start="2026-05-14T22:05:59.840455" elapsed="0.000323">No keyword with name 'Validar Campos Obrigatórios' found.</status>
+</kw>
+<error>
+<value>[Tags]</value>
+<status status="NOT RUN" start="2026-05-14T22:05:59.840995" elapsed="0.000185"/>
+</error>
+<kw name="Abrir Cardfy" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.842068" elapsed="0.000116"/>
+</kw>
+<kw name="Salvar Cartão" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.842538" elapsed="0.000083"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<arg>Número do cartão é obrigatório</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.842902" elapsed="0.000074"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<arg>Nome do titular é obrigatório</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.843245" elapsed="0.000072"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<arg>Data de expiração é obrigatória</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.843576" elapsed="0.000070"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<arg>CVV é obrigatório</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.843917" elapsed="0.000069"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<arg>Selecione um banco</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.844215" elapsed="0.000053"/>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.844460" elapsed="0.000315"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.845028" elapsed="0.000103"/>
+</kw>
+<kw name="Validar Nome Inválido">
+<status status="NOT RUN" start="2026-05-14T22:05:59.845437" elapsed="0.000079"/>
+</kw>
+<error>
+<value>[Tags]</value>
+<status status="NOT RUN" start="2026-05-14T22:05:59.845619" elapsed="0.000055"/>
+</error>
+<kw name="Abrir Cardfy" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.845964" elapsed="0.000059"/>
+</kw>
+<kw name="Preencher Nome Inválido" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.846226" elapsed="0.027897"/>
+</kw>
+<kw name="Selecionar Banco Nubank" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.874446" elapsed="0.000055"/>
+</kw>
+<kw name="Salvar Cartão" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.874661" elapsed="0.000040"/>
+</kw>
+<kw name="Validar Mensagem Erro" owner="common">
+<arg>Nome deve ter pelo menos 2 caracteres</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.874839" elapsed="0.000037"/>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.875014" elapsed="0.000036"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.875184" elapsed="0.000035"/>
+</kw>
+<kw name="Validar CVV Inválido">
+<status status="NOT RUN" start="2026-05-14T22:05:59.875365" elapsed="0.000034"/>
+</kw>
+<error>
+<value>[Tags]</value>
+<status status="NOT RUN" start="2026-05-14T22:05:59.875457" elapsed="0.000033"/>
+</error>
+<kw name="Abrir Cardfy" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.875676" elapsed="0.000070"/>
+</kw>
+<kw name="Preencher CVV Inválido" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.876014" elapsed="0.000079"/>
+</kw>
+<kw name="Selecionar Banco Nubank" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.876273" elapsed="0.000087"/>
+</kw>
+<kw name="Salvar Cartão" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.876549" elapsed="0.000044"/>
+</kw>
+<kw name="Validar Mensagem Erro" owner="common">
+<arg>CVV deve ter 3 ou 4 dígitos</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.876751" elapsed="0.000041"/>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.876937" elapsed="0.000038"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.877105" elapsed="0.000035"/>
+</kw>
+<kw name="Validar Sem Selecionar Banco">
+<status status="NOT RUN" start="2026-05-14T22:05:59.877288" elapsed="0.000034"/>
+</kw>
+<error>
+<value>[Tags]</value>
+<status status="NOT RUN" start="2026-05-14T22:05:59.877382" elapsed="0.000036"/>
+</error>
+<kw name="Abrir Cardfy" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.877587" elapsed="0.000035"/>
+</kw>
+<kw name="Preencher Dados Cartão" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.877780" elapsed="0.000036"/>
+</kw>
+<kw name="Salvar Cartão" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.877949" elapsed="0.000036"/>
+</kw>
+<kw name="Validar Mensagem Obrigatória" owner="common">
+<arg>Selecione um banco</arg>
+<status status="NOT RUN" start="2026-05-14T22:05:59.878119" elapsed="0.000036"/>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.878293" elapsed="0.000035"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:05:59.878450" elapsed="0.000034"/>
+</kw>
+<tag>negative</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-05-14T22:05:42.471207" elapsed="17.407545">No keyword with name 'Validar Campos Obrigatórios' found.</status>
+</test>
+<status status="FAIL" start="2026-05-14T22:05:41.607862" elapsed="18.283427"/>
+</suite>
+<status status="FAIL" start="2026-05-14T22:05:41.606216" elapsed="18.286584"/>
+</suite>
+<status status="FAIL" start="2026-05-14T22:05:41.530294" elapsed="18.363486"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">negative</stat>
+<stat pass="0" fail="1" skip="0">regression</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="1" skip="0">Tests</stat>
+<stat name="Negative" id="s1-s1" pass="0" fail="1" skip="0">Tests.Negative</stat>
+<stat name="Add Card Validation" id="s1-s1-s1" pass="0" fail="1" skip="0">Tests.Negative.Add Card Validation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
