@@ -32,6 +32,9 @@ jobs:
       - name: Subir frontend
         run: npm run dev &
 
+      - name: Aguardar frontend iniciar
+        run: sleep 15
+
       # MOCK API
       - name: Instalar JSON Server
         run: npm install -g json-server
