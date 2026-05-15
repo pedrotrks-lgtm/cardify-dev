@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-14T22:05:41.544008" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests">
+<suite id="s1-s1" name="Critical" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\critical">
+<suite id="s1-s1-s1" name="Add Card" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\critical\add_card.robot">
+<test id="s1-s1-s1-t1" name="Cadastrar Cartão Com Sucesso" line="5">
+<kw name="Abrir Cardfy" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-14T22:05:42.472789" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000238F9FF70E0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.469277" elapsed="0.003586"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--headless')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.473090" elapsed="0.000506"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--window-size=1920,1080')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.473763" elapsed="0.000429"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:42.479270" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-05-14T22:05:42.474356" elapsed="1.944914"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:44.419697" level="INFO">Opening url 'http://localhost:5173/add'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-14T22:05:44.419486" elapsed="11.409568"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.829431" elapsed="0.071460"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:42.468347" elapsed="13.432700"/>
+</kw>
+<kw name="Preencher Dados Cartão" owner="common">
+<kw name="Gerar Nome" owner="utils">
+<msg time="2026-05-14T22:05:55.902000" level="INFO">${nome} = Joana Lima</msg>
+<var>${nome}</var>
+<status status="PASS" start="2026-05-14T22:05:55.901725" elapsed="0.000320"/>
+</kw>
+<kw name="Gerar Numero Cartao" owner="utils">
+<msg time="2026-05-14T22:05:55.903376" level="INFO">${cartao} = 4111111111111111</msg>
+<var>${cartao}</var>
+<status status="PASS" start="2026-05-14T22:05:55.902175" elapsed="0.001254"/>
+</kw>
+<kw name="Gerar Validade" owner="utils">
+<msg time="2026-05-14T22:05:55.903771" level="INFO">${validade} = 12/30</msg>
+<var>${validade}</var>
+<status status="PASS" start="2026-05-14T22:05:55.903589" elapsed="0.000220"/>
+</kw>
+<kw name="Gerar Cvv" owner="utils">
+<msg time="2026-05-14T22:05:55.904093" level="INFO">${cvv} = 759</msg>
+<var>${cvv}</var>
+<status status="PASS" start="2026-05-14T22:05:55.903937" elapsed="0.000191"/>
+</kw>
+<kw name="Preencher Formulário Cartão" owner="common">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:55.905500" level="INFO">Typing text '4111111111111111' into text field 'xpath=//input[@placeholder="1234 5678 9012 3456"]'.</msg>
+<arg>${INPUT_CARTAO}</arg>
+<arg>${cartao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-14T22:05:55.904783" elapsed="0.331319"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:56.236830" level="INFO">Typing text 'Joana Lima' into text field 'xpath=//input[@placeholder="FULANO DE TAL"]'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.236452" elapsed="0.153004"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:56.390260" level="INFO">Typing text '12/30' into text field 'xpath=//input[@placeholder="MM/AA"]'.</msg>
+<arg>${INPUT_VALIDADE}</arg>
+<arg>${validade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.389844" elapsed="0.104587"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:56.495651" level="INFO">Typing text '759' into text field 'xpath=//input[@placeholder="123"]'.</msg>
+<arg>${INPUT_CVV}</arg>
+<arg>${cvv}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.494719" elapsed="0.103965"/>
+</kw>
+<arg>${cartao}</arg>
+<arg>${nome}</arg>
+<arg>${validade}</arg>
+<arg>${cvv}</arg>
+<status status="PASS" start="2026-05-14T22:05:55.904336" elapsed="0.694521"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:55.901351" elapsed="0.697599"/>
+</kw>
+<kw name="Selecionar Banco Nubank" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_NUBANK}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.599486" elapsed="0.026853"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:56.626977" level="INFO">Clicking element 'xpath=//button[contains(., "Nubank")]'.</msg>
+<arg>${BOTAO_NUBANK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.626665" elapsed="0.074427"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:56.599159" elapsed="0.102069"/>
+</kw>
+<kw name="Salvar Cartão" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_SALVAR}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.701753" elapsed="0.030243"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:05:56.732505" level="INFO">Clicking button 'xpath=//button[@type="submit"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-14T22:05:56.732231" elapsed="0.191496"/>
+</kw>
+<status status="PASS" start="2026-05-14T22:05:56.701444" elapsed="0.222424"/>
+</kw>
+<kw name="Validar Sucesso Cadastro" owner="common">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-05-14T22:06:07.141685" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../results/screenshots/selenium-screenshot-6.png"&gt;&lt;img src="../../results/screenshots/selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-14T22:06:07.141917" level="FAIL">Text 'Cartão cadastrado com sucesso!' did not appear in 10 seconds.</msg>
+<arg>Cartão cadastrado com sucesso!</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-05-14T22:05:56.924454" elapsed="10.222580">Text 'Cartão cadastrado com sucesso!' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-05-14T22:05:56.924085" elapsed="10.223186">Text 'Cartão cadastrado com sucesso!' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:06:07.147564" elapsed="0.000083"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<status status="NOT RUN" start="2026-05-14T22:06:07.147810" elapsed="0.000038"/>
+</kw>
+<tag>critical</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-05-14T22:05:42.467398" elapsed="24.680697">Text 'Cartão cadastrado com sucesso!' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" start="2026-05-14T22:05:41.608919" elapsed="25.539870"/>
+</suite>
+<status status="FAIL" start="2026-05-14T22:05:41.606739" elapsed="25.542784"/>
+</suite>
+<status status="FAIL" start="2026-05-14T22:05:41.545924" elapsed="25.604091"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">regression</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="1" skip="0">Tests</stat>
+<stat name="Critical" id="s1-s1" pass="0" fail="1" skip="0">Tests.Critical</stat>
+<stat name="Add Card" id="s1-s1-s1" pass="0" fail="1" skip="0">Tests.Critical.Add Card</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

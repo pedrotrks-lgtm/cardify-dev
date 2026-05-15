@@ -8,14 +8,59 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  cypress-tests:
+
+  robot-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+
+    timeout-minutes: 15
 
     steps:
-      - uses: actions/checkout@v4
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+      - name: Checkout projeto
+        uses: actions/checkout@v4
+
+      # NODE
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          component: true
+          node-version: 20
+
+      - name: Instalar dependências frontend
+        run: npm install
+
+      # FRONTEND
+      - name: Subir frontend
+        run: npm run dev &
+
+      # MOCK API
+      - name: Instalar JSON Server
+        run: npm install -g json-server
+
+      - name: Subir mock API
+        run: json-server --watch db.json --port 3001 &
+
+      # PYTHON
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependências Python
+        run: |
+          pip install robotframework
+          pip install robotframework-seleniumlibrary
+          pip install robotframework-requests
+          pip install selenium
+          pip install faker
+
+      # CHROME
+      - name: Instalar Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      # ROBOT UI
+      - name: Executar testes Robot UI
+        run: robot -i smoke robot/tests
+
+      # ROBOT API
+      - name: Executar testes Robot API
+        run: robot robot/api

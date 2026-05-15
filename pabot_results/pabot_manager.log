@@ -1,0 +1,67 @@
+[INFO]    Initialized logging in .\pabot_results
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 started.
+[DEBUG]   Storing .pabotsuitenames file
+[DEBUG]   2026-05-14 22:05:40.921679 [PID:23224] [0] [ID:1] EXECUTING Tests.Negative.Add Card Validation
+[DEBUG]   2026-05-14 22:05:40.922608 [PID:23176] [1] [ID:0] EXECUTING Tests.Critical.Add Card
+[DEBUG]   2026-05-14 22:05:40.924289 [PID:4224] [2] [ID:2] EXECUTING Tests.Smoke.Home Smoke
+[DEBUG]   2026-05-14 22:05:46.672550 [PID:4224] [2] [ID:2] still running Tests.Smoke.Home Smoke after 5.0s
+[DEBUG]   2026-05-14 22:05:46.672710 [PID:23224] [0] [ID:1] still running Tests.Negative.Add Card Validation after 5.0s
+[DEBUG]   2026-05-14 22:05:46.672784 [PID:23176] [1] [ID:0] still running Tests.Critical.Add Card after 5.0s
+[DEBUG]   2026-05-14 22:05:57.094930 [PID:23224] [0] [ID:1] still running Tests.Negative.Add Card Validation after 15.0s
+[DEBUG]   2026-05-14 22:05:57.095031 [PID:4224] [2] [ID:2] still running Tests.Smoke.Home Smoke after 15.0s
+[DEBUG]   2026-05-14 22:05:57.095088 [PID:23176] [1] [ID:0] still running Tests.Critical.Add Card after 15.0s
+[INFO]    2026-05-14 22:06:00.138963 [PID:4224] [2] [ID:2] PASSED Tests.Smoke.Home Smoke in 19.2 seconds
+[INFO]    2026-05-14 22:06:00.272477 [PID:23224] [0] [ID:1] Execution failed in Tests.Negative.Add Card Validation with 1 failing test(s)
+==============================================================================
+Tests
+==============================================================================
+Tests.Negative
+==============================================================================
+Tests.Negative.Add Card Validation
+==============================================================================
+Validar Campos Obrigatï¿½rios                                           | FAIL |
+No keyword with name 'Validar Campos Obrigatï¿½rios' found.
+------------------------------------------------------------------------------
+Tests.Negative.Add Card Validation                                    | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests.Negative                                                        | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests                                                                 | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\pedsa\Documents\cardify-dev\pabot_results\1\output.xml
+[INFO]    2026-05-14 22:06:09.583560 [PID:23176] [1] [ID:0] Execution failed in Tests.Critical.Add Card with 1 failing test(s)
+==============================================================================
+Tests
+==============================================================================
+Tests.Critical
+==============================================================================
+Tests.Critical.Add Card
+==============================================================================
+Cadastrar Cartï¿½o Com Sucesso                                          | FAIL |
+Text 'Cartï¿½o cadastrado com sucesso!' did not appear in 10 seconds.
+------------------------------------------------------------------------------
+Tests.Critical.Add Card                                               | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests.Critical                                                        | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests                                                                 | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\pedsa\Documents\cardify-dev\pabot_results\0\output.xml
+[INFO]    3 tests, 1 passed, 2 failed, 0 skipped.
+[INFO]    ===================================================
+[INFO]    Output:  C:\Users\pedsa\Documents\cardify-dev\output.xml
+[INFO]    Log:     C:\Users\pedsa\Documents\cardify-dev\log.html
+[INFO]    Report:  C:\Users\pedsa\Documents\cardify-dev\report.html
+[DEBUG]   Finalizing Pabot execution...
+[DEBUG]   Stopping PabotLib process
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 stopped.
+[DEBUG]   PabotLib process stopped
+[INFO]    Total testing: 1 minute 7.20 seconds
+[INFO]    Elapsed time:  30.17 seconds
+[DEBUG]   Logs flushed successfully.

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-15T09:41:08.835407" rpa="false" schemaversion="5">
+<suite id="s1" name="Api" source="C:\Users\pedsa\Documents\cardify-dev\robot\api">
+<suite id="s1-s1" name="Cards Api" source="C:\Users\pedsa\Documents\cardify-dev\robot\api\cards_api.robot">
+<test id="s1-s1-t1" name="Validar API Listar Cartões" line="12">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-05-15T09:41:09.336863" level="INFO">Creating Session using : alias=cardfy, url=http://localhost:3001, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>cardfy</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-05-15T09:41:09.336643" elapsed="0.000430"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-05-15T09:41:09.345742" level="INFO">GET Request : url=http://localhost:3001/cards 
+ path_url=/cards 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-05-15T09:41:09.345867" level="INFO">GET Response : url=http://localhost:3001/cards 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'tinyhttp', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, HEAD, PUT, PATCH, POST, DELETE', 'Access-Control-Allow-Headers': 'content-type', 'Content-Type': 'application/json', 'Date': 'Fri, 15 May 2026 12:41:09 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '1310'} 
+ body=[
+  {
+    "number": "4111111111111111",
+    "holder": "Pedro Teste",
+    "expiration": "12/30",
+    "cvv": "123",
+    "bank": "Nubank",
+    "id": "WH3C7jek5No"
+  },
+  {
+    "number": "4111111111111111",
+    "holder": "Pedro Teste",
+    "expiration": "12/30",
+    "cvv": "123",
+    "bank": "Nubank",
+    "id": "7dbNwCxi_u4"
+  },
+  {
+    "number": "4111111111111111",
+    "holder": "Pedro Teste",
+    "expiration": "12/30",
+    "cvv": "123",
+    "bank": "Nubank",
+    "id": "1h_x_H0kIrs"
+  },
+  {
+    "number": "4111111111111111",
+    "holder": "Pedro Teste",
+    "expiration": "12/30",
+    "cvv": "123",
+    "bank": "Nubank",
+    "id": "GMlL1ssSIo4"
+  },
+  {
+    "number": "4111111111111111",
+    "holder": "Pedro Teste",
+    "expiration": "12/30",
+    "cvv": "123",
+    "bank": "Nubank",
+    "id": "PdxbbzY5Cug"
+  },
+  {
+    "number": "4111111111111111",
+    "holder": "Pedro Teste",
+    "expiration": "12/30",
+    "cvv": "123",
+    "bank": "Nubank",
+    "id": "JQ0P2LIunjo"
+  },
+  {
+    "number": "4111111111111111",
+    "holder": "Pedro Teste",
+    "expiration": "12/30",
+    "cvv": "123",
+    "bank": "Nubank",
+    "id": "uYjqWn3PLTI"
+  },
+  {
+    "number": "2374267215078209",
+    "holder": "Augusto da Mata",
+    "expiration": "12/26",
+    "cvv": "583",
+    "bank": "Nubank",
+    "id": "3HrKbJnxmiM"
+  }
+] 
+ </msg>
+<msg time="2026-05-15T09:41:09.346019" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>cardfy</arg>
+<arg>/cards</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.337430" elapsed="0.008621"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.346446" elapsed="0.000345"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.347128" elapsed="0.001174"/>
+</kw>
+<tag>api</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2026-05-15T09:41:09.335637" elapsed="0.012907"/>
+</test>
+<test id="s1-s1-t2" name="Validar API Criar Cartão" line="30">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-05-15T09:41:09.350092" level="INFO">Creating Session using : alias=cardfy, url=http://localhost:3001, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>cardfy</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-05-15T09:41:09.349876" elapsed="0.000404"/>
+</kw>
+<kw name="Gerar Nome" owner="utils">
+<msg time="2026-05-15T09:41:09.350892" level="INFO">${nome} = Maria Cecília Correia</msg>
+<var>${nome}</var>
+<status status="PASS" start="2026-05-15T09:41:09.350611" elapsed="0.000326"/>
+</kw>
+<kw name="Gerar Numero Cartao" owner="utils">
+<msg time="2026-05-15T09:41:09.351355" level="INFO">${cartao} = 2388841090620360</msg>
+<var>${cartao}</var>
+<status status="PASS" start="2026-05-15T09:41:09.351152" elapsed="0.000237"/>
+</kw>
+<kw name="Gerar Validade" owner="utils">
+<msg time="2026-05-15T09:41:09.351740" level="INFO">${validade} = 05/30</msg>
+<var>${validade}</var>
+<status status="PASS" start="2026-05-15T09:41:09.351578" elapsed="0.000193"/>
+</kw>
+<kw name="Gerar Cvv" owner="utils">
+<msg time="2026-05-15T09:41:09.352326" level="INFO">${cvv} = 193</msg>
+<var>${cvv}</var>
+<status status="PASS" start="2026-05-15T09:41:09.352150" elapsed="0.000208"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-05-15T09:41:09.353459" level="INFO">${body} = {'number': '2388841090620360', 'holder': 'Maria Cecília Correia', 'expiration': '05/30', 'cvv': '193', 'bank': 'Nubank'}</msg>
+<var>${body}</var>
+<arg>number=${cartao}</arg>
+<arg>holder=${nome}</arg>
+<arg>expiration=${validade}</arg>
+<arg>cvv=${cvv}</arg>
+<arg>bank=Nubank</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.352632" elapsed="0.000905"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-05-15T09:41:09.363705" level="INFO">POST Request : url=http://localhost:3001/cards 
+ path_url=/cards 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '125', 'Content-Type': 'application/json'} 
+ body=b'{"number": "2388841090620360", "holder": "Maria Cec\\u00edlia Correia", "expiration": "05/30", "cvv": "193", "bank": "Nubank"}' 
+ </msg>
+<msg time="2026-05-15T09:41:09.363815" level="INFO">POST Response : url=http://localhost:3001/cards 
+ status=201, reason=Created 
+ headers={'X-Powered-By': 'tinyhttp', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, HEAD, PUT, PATCH, POST, DELETE', 'Access-Control-Allow-Headers': 'content-type', 'Content-Type': 'application/json', 'Date': 'Fri, 15 May 2026 12:41:09 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Content-Length': '156'} 
+ body={
+  "number": "2388841090620360",
+  "holder": "Maria Cecília Correia",
+  "expiration": "05/30",
+  "cvv": "193",
+  "bank": "Nubank",
+  "id": "sYq-SaVkwpM"
+} 
+ </msg>
+<msg time="2026-05-15T09:41:09.364009" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>cardfy</arg>
+<arg>/cards</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.356701" elapsed="0.007341"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.364698" elapsed="0.000298"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-05-15T09:41:09.366208" level="INFO">${response_body} = {'number': '2388841090620360', 'holder': 'Maria Cecília Correia', 'expiration': '05/30', 'cvv': '193', 'bank': 'Nubank', 'id': 'sYq-SaVkwpM'}</msg>
+<var>${response_body}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.365416" elapsed="0.000827"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response_body}[holder]</arg>
+<arg>${nome}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.366898" elapsed="0.000466"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response_body}[bank]</arg>
+<arg>Nubank</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.367712" elapsed="0.000797"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-05-15T09:41:09.369386" level="INFO">Length is 11.</msg>
+<arg>${response_body}[id]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.368858" elapsed="0.000581"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response_body}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-15T09:41:09.369786" elapsed="0.000596"/>
+</kw>
+<tag>api</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-05-15T09:41:09.349356" elapsed="0.021321"/>
+</test>
+<status status="PASS" start="2026-05-15T09:41:08.887122" elapsed="0.484794"/>
+</suite>
+<status status="PASS" start="2026-05-15T09:41:08.838005" elapsed="0.536608"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">api</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Api" id="s1" pass="2" fail="0" skip="0">Api</stat>
+<stat name="Cards Api" id="s1-s1" pass="2" fail="0" skip="0">Api.Cards Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

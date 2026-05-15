@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-15T09:22:55.404600" rpa="false" schemaversion="5">
+<suite id="s1" name="Cardify-Dev" source="C:\Users\pedsa\Documents\cardify-dev">
+<suite id="s1-s1" name="Robot" source="C:\Users\pedsa\Documents\cardify-dev\robot">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests">
+<suite id="s1-s1-s1-s1" name="Critical" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\critical">
+<suite id="s1-s1-s1-s1-s1" name="Card List" source="C:\Users\pedsa\Documents\cardify-dev\robot\tests\critical\card_list.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Validar Cartão Criado Via API" line="7">
+<kw name="Abrir Cardfy" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-15T09:22:56.475997" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002BC7E28CD70&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-15T09:22:56.469803" elapsed="0.006447"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--headless')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-15T09:22:56.476583" elapsed="0.000996"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--window-size=1440,900')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-15T09:22:56.477869" elapsed="0.000816"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-05-15T09:22:56.487575" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-05-15T09:22:56.478920" elapsed="2.522335"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-15T09:22:59.002984" level="INFO">Opening url 'http://localhost:5173/add'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-15T09:22:59.001986" elapsed="17.451333"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1440</arg>
+<arg>900</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-05-15T09:23:16.453624" elapsed="0.024418"/>
+</kw>
+<status status="PASS" start="2026-05-15T09:22:56.468672" elapsed="20.009610"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-05-15T09:23:26.767125" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-3.png"&gt;&lt;img src="screenshots/selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-15T09:23:26.767615" level="FAIL">Text 'Pedro Teste' did not appear in 10 seconds.</msg>
+<arg>Pedro Teste</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-05-15T09:23:16.478658" elapsed="10.347497">Text 'Pedro Teste' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Nubank</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-05-15T09:23:26.826739" elapsed="0.000273"/>
+</kw>
+<kw name="Capturar Evidência" owner="common">
+<status status="NOT RUN" start="2026-05-15T09:23:26.827553" elapsed="0.000307"/>
+</kw>
+<kw name="Fechar Navegador" owner="common">
+<status status="NOT RUN" start="2026-05-15T09:23:26.828379" elapsed="0.000256"/>
+</kw>
+<tag>api</tag>
+<tag>critical</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-05-15T09:22:56.463369" elapsed="30.365823">Text 'Pedro Teste' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" start="2026-05-15T09:22:55.544443" elapsed="31.307674"/>
+</suite>
+<status status="FAIL" start="2026-05-15T09:22:55.538520" elapsed="31.318499"/>
+</suite>
+<status status="FAIL" start="2026-05-15T09:22:55.532436" elapsed="31.329098"/>
+</suite>
+<status status="FAIL" start="2026-05-15T09:22:55.526525" elapsed="31.340516"/>
+</suite>
+<status status="FAIL" start="2026-05-15T09:22:55.472937" elapsed="31.398597"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">api</stat>
+<stat pass="0" fail="1" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">regression</stat>
+</tag>
+<suite>
+<stat name="Cardify-Dev" id="s1" pass="0" fail="1" skip="0">Cardify-Dev</stat>
+<stat name="Robot" id="s1-s1" pass="0" fail="1" skip="0">Cardify-Dev.Robot</stat>
+<stat name="Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">Cardify-Dev.Robot.Tests</stat>
+<stat name="Critical" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">Cardify-Dev.Robot.Tests.Critical</stat>
+<stat name="Card List" id="s1-s1-s1-s1-s1" pass="0" fail="1" skip="0">Cardify-Dev.Robot.Tests.Critical.Card List</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
